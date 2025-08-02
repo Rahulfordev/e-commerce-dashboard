@@ -2,11 +2,6 @@
 
 This project is a **responsive e-commerce dashboard** built using **Next.js 15 App Router**, **React Query**, **Redux**, and **Tailwind CSS**. It integrates with the [FakeStore API](https://fakestoreapi.com) to showcase product listings, filtering, cart functionality, and more.
 
-> **Assignment Provider:** Verv  
-> **Deadline:** 2 August 2025, 11:59 PM
-
----
-
 ## 🚀 Live Demo
 
 👉 [Live Site on Vercel](https://your-vercel-link.vercel.app)
@@ -18,19 +13,23 @@ This project is a **responsive e-commerce dashboard** built using **Next.js 15 A
 ### ✅ Core Requirements
 
 1. **Product Listing Page**
+
    - Fetches and displays products from `https://fakestoreapi.com/products`
    - Shows image, title, price, and category
    - Clicking a product opens `/products/[id]`
 
 2. **Filter by Category**
+
    - Categories fetched from `/products/categories`
    - Products can be filtered by selected category
 
 3. **Product Detail Page**
+
    - Fetches details from `/products/:id`
    - Shows full info: title, image, price, description, rating, and category
 
 4. **Add to Cart**
+
    - Add/remove items from cart
    - Cart count shown in header
    - `/cart` page displays all items, quantities, and total
@@ -57,13 +56,13 @@ This project is a **responsive e-commerce dashboard** built using **Next.js 15 A
 
 ## 🧠 Design Choices
 
-| Area            | Decision                                                                 |
-|-----------------|--------------------------------------------------------------------------|
-| **Framework**   | Next.js 15 (App Router) with Client Components where needed              |
-| **State Mgmt**  | Redux Toolkit for Cart, React Query for fetching (decoupled & scalable) |
-| **Styling**     | Tailwind CSS for speed, responsiveness, and utility-based styling        |
-| **Form Handling** | `react-hook-form` with `zod` for type-safe validation                 |
-| **UX/UI**       | Iconography via `@heroicons/react`, clean spacing, and mobile-first     |
+| Area              | Decision                                                                |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Framework**     | Next.js 15 (App Router) with Client Components where needed             |
+| **State Mgmt**    | Redux Toolkit for Cart, React Query for fetching (decoupled & scalable) |
+| **Styling**       | Tailwind CSS for speed, responsiveness, and utility-based styling       |
+| **Form Handling** | `react-hook-form` with `zod` for type-safe validation                   |
+| **UX/UI**         | Iconography via `@heroicons/react`, clean spacing, and mobile-first     |
 
 ---
 
@@ -78,10 +77,10 @@ app/
 
 components/
   ├── ui/                    # Reusable: Loader, ErrorMessage, Pagination, etc.
-  ├── products/              # ProductCard, CategoryFilter, SortDropdown
-  └── layout/                # Navbar, etc.
+  ├── products/              # ProductCard, CategoryFilter, SortDropdown, Cart, ProductDetail, Products
+  └── common/                # Navbar, etc.
 
-hooks/                       # useProducts, useProductDetail, useCategories
+hooks/                       # useProducts, useProductDetail, useCategories, useDebounce
 lib/                         # store.ts, validators
 slices/                      # cartSlice.ts
 types/                       # Type definitions
@@ -93,7 +92,7 @@ types/                       # Type definitions
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/verv-frontend-assignment.git
+git clone https://github.com/Rahulfordev/e-commerce-dashboard.git
 cd verv-frontend-assignment
 
 # 2. Install dependencies

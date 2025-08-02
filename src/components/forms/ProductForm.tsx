@@ -12,7 +12,7 @@ export default function ProductForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ProductFormData>({
+  } = useForm({
     resolver: zodResolver(productSchema),
   });
 
