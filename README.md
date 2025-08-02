@@ -4,7 +4,7 @@ This project is a **responsive e-commerce dashboard** built using **Next.js 15 A
 
 ## 🚀 Live Demo
 
-👉 [Live Site on Vercel](https://your-vercel-link.vercel.app)
+👉 [Live Site on Vercel](https://e-commerce-dashboard-henna.vercel.app/)
 
 ---
 
