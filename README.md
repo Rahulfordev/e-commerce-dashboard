@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ E-Commerce Dashboard – Frontend Assignment
 
-## Getting Started
+This project is a **responsive e-commerce dashboard** built using **Next.js 15 App Router**, **React Query**, **Redux**, and **Tailwind CSS**. It integrates with the [FakeStore API](https://fakestoreapi.com) to showcase product listings, filtering, cart functionality, and more.
 
-First, run the development server:
+> **Assignment Provider:** Verv  
+> **Deadline:** 2 August 2025, 11:59 PM
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Live Demo
+
+👉 [Live Site on Vercel](https://your-vercel-link.vercel.app)
+
+---
+
+## 📦 Features
+
+### ✅ Core Requirements
+
+1. **Product Listing Page**
+   - Fetches and displays products from `https://fakestoreapi.com/products`
+   - Shows image, title, price, and category
+   - Clicking a product opens `/products/[id]`
+
+2. **Filter by Category**
+   - Categories fetched from `/products/categories`
+   - Products can be filtered by selected category
+
+3. **Product Detail Page**
+   - Fetches details from `/products/:id`
+   - Shows full info: title, image, price, description, rating, and category
+
+4. **Add to Cart**
+   - Add/remove items from cart
+   - Cart count shown in header
+   - `/cart` page displays all items, quantities, and total
+
+5. **Add New Product (Simulated)**
+   - `/add-product` page with form
+   - Validated using `zod` + `react-hook-form`
+   - Simulates POST request with success/fail toast
+
+---
+
+### 🌟 Bonus Features (Implemented)
+
+- ✅ **Pagination** for product listing
+- ✅ **Debounced Search**
+- ✅ **Sorting by Price & Rating**
+- ✅ **React Query** for fetching and caching
+- ✅ **Redux Toolkit** for cart state
+- ✅ **Responsive UI** with **Tailwind CSS**
+- ✅ **Loader** and **Error handling UI**
+- ✅ **Professional & accessible components**
+
+---
+
+## 🧠 Design Choices
+
+| Area            | Decision                                                                 |
+|-----------------|--------------------------------------------------------------------------|
+| **Framework**   | Next.js 15 (App Router) with Client Components where needed              |
+| **State Mgmt**  | Redux Toolkit for Cart, React Query for fetching (decoupled & scalable) |
+| **Styling**     | Tailwind CSS for speed, responsiveness, and utility-based styling        |
+| **Form Handling** | `react-hook-form` with `zod` for type-safe validation                 |
+| **UX/UI**       | Iconography via `@heroicons/react`, clean spacing, and mobile-first     |
+
+---
+
+## 📁 Project Structure
+
+```
+app/
+  ├── page.tsx               # Product list
+  ├── cart/page.tsx          # Cart
+  ├── add-product/page.tsx   # Product form
+  └── products/[id]/page.tsx # Product detail
+
+components/
+  ├── ui/                    # Reusable: Loader, ErrorMessage, Pagination, etc.
+  ├── products/              # ProductCard, CategoryFilter, SortDropdown
+  └── layout/                # Navbar, etc.
+
+hooks/                       # useProducts, useProductDetail, useCategories
+lib/                         # store.ts, validators
+slices/                      # cartSlice.ts
+types/                       # Type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Setup Instructions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 1. Clone the repo
+git clone https://github.com/yourusername/verv-frontend-assignment.git
+cd verv-frontend-assignment
 
-## Learn More
+# 2. Install dependencies
+yarn install
+# or
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# 3. Run the dev server
+yarn dev
+# or
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 4. Visit
+http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔗 Dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js** (v15 App Router)
+- **React Query** (tanstack)
+- **Redux Toolkit**
+- **Tailwind CSS**
+- **React Hook Form + Zod**
+- **Heroicons**
+- **Toastify**
