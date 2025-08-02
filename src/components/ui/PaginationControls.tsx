@@ -24,7 +24,7 @@ export default function PaginationControls({
           className={`px-3 py-1 rounded cursor-pointer ${
             currentPage === i + 1
               ? "bg-secondary text-white"
-              : "bg-gray-100 text-black"
+              : "bg-white text-black border border-pastelLavender"
           }`}
         >
           {i + 1}

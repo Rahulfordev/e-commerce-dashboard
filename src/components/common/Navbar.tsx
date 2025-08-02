@@ -8,6 +8,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   const cart = useSelector((state: RootState) => state.cart);
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <nav className="bg-white border-b border-pastelLavender sticky top-0 z-50">
@@ -20,7 +21,7 @@ const Navbar = () => {
           <ShoppingCartIcon className="w-6 h-6 text-black hover:text-secondary transition" />
           {cart.length > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[11px] px-1.5 py-0.5 rounded-full font-medium">
-              {cart.length}
+              {totalQuantity}
             </span>
           )}
         </Link>
